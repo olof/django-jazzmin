@@ -115,9 +115,9 @@ if not DEBUG and not TEST:
 ########################
 JAZZMIN_SETTINGS = {
     # title of the window
-    "site_title": "Library Admin",
+    #"site_title": "Library Admin",
     # Title on the brand, and the login screen (19 chars max)
-    "site_header": "Library",
+    #"site_header": "Library",
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
     "site_logo": "books/img/logo.png",
     # Welcome text on the login screen

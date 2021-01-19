@@ -11,6 +11,8 @@ try:
 except ImportError:
     from django.conf.urls.defaults import url, include
 
+from library.admin import librarian
+
 
 def make_messages(request):
     messages.add_message(request, messages.INFO, "Info message")
@@ -29,6 +31,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
+urlpatterns += i18n_patterns(path("staff/", librarian.urls))
 
 if settings.DEBUG:
     urlpatterns.append(

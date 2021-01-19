@@ -6,6 +6,8 @@ from django.utils.html import format_html
 from django.utils.timesince import timesince
 from import_export.admin import ImportExportMixin
 
+from ..admin import librarian
+
 from .models import Book, Author, Genre
 from .resources import BookResource
 
@@ -91,3 +93,9 @@ class CustomUserAdmin(UserAdmin):
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
     search_fields = ("name",)
+
+
+# Register a limited set of models to the custom admin site for librarians:
+admin.register(Book, site=librarian)(BookAdmin)
+admin.register(Author, site=librarian)(AuthorAdmin)
+admin.register(Genre, site=librarian)(GenreAdmin)
